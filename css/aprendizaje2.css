@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background: #3b7a57;
+    min-height: 100vh;
+    color: white;
+}
+
+h1 {
+    color: #e6f7ff;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+}
+
+.ayuda {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #d0f0fd;
+}
+
+.cuadro-centro {
+    width: min(920px, 100%);
+    max-width: 920px;
+    margin: 0 auto 20px;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.35);
+    border-radius: 22px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.contenedor-manzanas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 18px;
+    min-height: 320px;
+    align-items: center;
+    justify-content: center;
+}
+
+.manzana {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.manzana.seleccionada {
+    transform: scale(1.1);
+    box-shadow: 0 0 18px rgba(30, 144, 255, 0.85);
+    border: 3px solid rgba(30, 144, 255, 0.9);
+    border-radius: 50%;
+}
+
+.numero {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffeb3b;
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 6px;
+}
+
+button:hover {
+    background-color: #1c86ee;
+}
+
+button.btn-aprendizaje3 {
+    background-color: #002b55;
+}
+
+button.btn-aprendizaje3:hover {
+    background-color: #003c7d;
+}
+
+.tabla-resultado {
+    margin: 0 auto 16px;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.tabla-resultado td {
+    padding: 8px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.tabla-resultado input {
+    width: 80px;
+    padding: 6px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 6px;
+    text-align: center;
+    font-size: 16px;
+}

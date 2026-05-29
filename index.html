@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>juego para sumar</title>
+    <link rel="stylesheet" href="css/estilo.css?v=1">
+</head>
+<body>
+    <div class="rectangulo">
+        <h1>Ingresa al Juego</h1>
+        
+        <div class="campo-nombre">
+            <label for="username">Nombre de usuario:</label>
+            <input type="text" id="username" placeholder="Escribe tu nombre..." maxlength="20">
+        </div>
+
+        <h2>Elige tu avatar:</h2>
+        <div class="contenedor-avatars">
+            <div class="avatar" data-nombre="Avatar 1">
+                <img src="img/OIP (1).png" alt="Avatar 1">
+                <p>Avatar 1</p>
+            </div>
+            <div class="avatar" data-nombre="Avatar 2">
+                <img src="img/OIP.jpg" alt="Avatar 2">
+                <p>Avatar 2</p>
+            </div>
+            <div class="avatar" data-nombre="Avatar 3">
+                <img src="img/omg(3).jpg" alt="Avatar 3">
+                <p>Avatar 3</p>
+            </div>
+            <div class="avatar" data-nombre="Avatar 4">
+                <img src="img/R.jpg" alt="Avatar 4">
+                <p>Avatar 4</p>
+            </div>
+        </div>
+<p id="mensajeError"></p>
+
+<button id="btnEntrar">Entrar</button>
+    </div>
+
+    <script src="js/eleccion.js"></script>
+
+</body>
+</html>

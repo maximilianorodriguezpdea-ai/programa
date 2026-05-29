@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* FONDO AZUL */
+body {
+    background: #1e3a8a; /* Azul oscuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* RECTÁNGULO PRINCIPAL */
+.rectangulo {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 25px;
+}
+
+h2 {
+    text-align: center;
+    color: #1e3a8a;
+    margin: 20px 0 15px 0;
+}
+
+/* PARTE PARA EL NOMBRE DE USUARIO */
+.campo-nombre {
+    margin-bottom: 20px;
+}
+
+.campo-nombre label {
+    display: block;
+    font-weight: bold;
+    color: #1e3a8a;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+#username {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 3px solid #3b82f6;
+    border-radius: 8px;
+}
+
+#username:focus {
+    outline: none;
+    border-color: #1e3a8a;
+}
+
+/* 4 ESPACIOS PARA ELEGIR AVATAR */
+.contenedor-avatars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.avatar {
+    border: 3px solid #93c5fd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+    background: #eff6ff;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+    border-color: #3b82f6;
+}
+
+.avatar.seleccionado {
+    border-color: #1e3a8a;
+    background: #dbeafe;
+    box-shadow: 0 0 10px rgba(30, 58, 138, 0.5);
+}
+
+.avatar img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.avatar p {
+    font-weight: bold;
+    color: #1e3a8a;
+}
+
+/* BOTÓN */
+#btnEntrar {
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    background: #3b82f6;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#btnEntrar:hover {
+    background: #1e3a8a;
+}
+
+#btnEntrar:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+.error {
+    color: #dc2626;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    min-height: 20px;
+}

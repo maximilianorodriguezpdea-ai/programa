@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Juego Matemático</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/juegoprincipal.css">
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <!-- PANEL -->
+        <div class="panel-ejercicio">
+
+            <h1>🍎 Juego Matemático 🍎</h1>
+
+            <div id="contador">
+                Ejercicio <span id="numeroEjercicio">1</span> / 30
+            </div>
+
+            <div id="ejercicio">
+                1 + 1 = ?
+            </div>
+
+            <div id="mensaje"></div>
+
+            <button id="verificarBtn">
+                Verificar canasta
+            </button>
+
+            <button id="reiniciarBtn">
+                Reiniciar Juego
+            </button>
+
+        </div>
+
+        <!-- MANZANAS -->
+        <div class="area-manzanas" id="manzanasContainer"></div>
+
+    </div>
+
+    <!-- CANASTA -->
+    <div class="canasta" id="canasta">
+        <div class="manzanas-en-canasta" id="manzanasEnCanasta"></div>
+    </div>
+
+    <!-- CONFETI -->
+    <canvas id="confeti"></canvas>
+
+    <!-- JS -->
+    <script src="js/juegoprincipal.js"></script>
+
+</body>
+</html>

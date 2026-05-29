@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendizaje 4 - Nombre del número</title>
+    <link rel="stylesheet" href="css/aprendizaje4.css">
+</head>
+<body>
+    <div class="contenedor-aprendizaje4">
+        <h1>Aprendizaje 4: Nombre del número</h1>
+        <p id="instruccion">Escribe el nombre del número que aparece en la tabla.</p>
+        <div class="tabla-numero">
+            <table>
+                <tr>
+                    <th>Número</th>
+                </tr>
+                <tr>
+                    <td id="numero-aleatorio">5</td>
+                </tr>
+            </table>
+        </div>
+        <p class="progreso">Pregunta <span id="ronda-actual">1</span> de 6</p>
+        <div class="formulario-respuesta">
+            <label for="input-nombre">Nombre del número:</label>
+            <input id="input-nombre" type="text" autocomplete="off" />
+            <button id="btn-verificar" disabled>Verificar</button>
+        </div>
+        <button id="btn-ir-juego" disabled>Ir al juego</button>
+        <div class="botones-secundarios">
+            <button onclick="window.location.href='aprendizaje3.html'">Volver a Aprendizaje 3</button>
+        </div>
+
+    </div>
+    <script src="js/aprendizaje4.js"></script>
+
+</body>
+</html>

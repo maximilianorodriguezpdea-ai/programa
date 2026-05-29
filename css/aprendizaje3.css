@@ -1,0 +1,66 @@
+body {
+    background: #0b4d91;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    padding: 24px;
+}
+
+.contenedor-aprendizaje3 {
+    max-width: 960px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 24px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+h1 {
+    color: #e6f7ff;
+    margin-bottom: 16px;
+}
+
+.tabla-numeros {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 24px;
+    border-collapse: collapse;
+}
+
+.tabla-numeros th,
+.tabla-numeros td {
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: white;
+}
+
+.tabla-numeros th {
+    background: rgba(255, 255, 255, 0.18);
+    font-size: 18px;
+}
+
+.tabla-numeros td {
+    background: rgba(255, 255, 255, 0.08);
+    font-size: 16px;
+}
+
+.btn-suma {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 12px 24px;
+    background: #002b55;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-suma:hover {
+    background: #003c7d;
+}
+
+.botones-secundarios {
+    margin-top: 20px;
+}

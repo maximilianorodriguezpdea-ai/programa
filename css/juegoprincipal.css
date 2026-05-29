@@ -1,0 +1,398 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #87ceeb 0%, #90ee90 70%, #228b22 100%);
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* FONDO CON ÁRBOLES */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        /* Árbol 1 */
+        radial-gradient(ellipse 80px 100px at 10% 60%, #228b22 0%, transparent 70%),
+        linear-gradient(180deg, #8b4513 0%, #8b4513 40px) 8% 58% / 30px 100px no-repeat,
+        /* Árbol 2 */
+        radial-gradient(ellipse 100px 120px at 85% 55%, #2d5016 0%, transparent 70%),
+        linear-gradient(180deg, #654321 0%, #654321 45px) 83% 52% / 35px 110px no-repeat,
+        /* Árbol 3 */
+        radial-gradient(ellipse 90px 110px at 50% 65%, #228b22 0%, transparent 70%),
+        linear-gradient(180deg, #8b4513 0%, #8b4513 42px) 48% 63% / 32px 105px no-repeat;
+    background-repeat: no-repeat;
+    background-size: auto;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* CONTENEDOR */
+.contenedor {
+    display: flex;
+    height: 100vh;
+    position: relative;
+    z-index: 2;
+}
+
+/* PANEL IZQUIERDO */
+.panel-ejercicio {
+    width: 30%;
+    background: rgba(31, 122, 31, 0.9);
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 3px solid #1f5a1f;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* TITULO */
+.panel-ejercicio h1 {
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* CONTADOR */
+#contador {
+    font-size: 20px;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* EJERCICIO */
+#ejercicio {
+    margin-top: 50px;
+    font-size: 48px;
+    background: white;
+    color: #1f7a1f;
+    padding: 20px 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* MENSAJE */
+#mensaje {
+    margin-top: 30px;
+    font-size: 22px;
+    text-align: center;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* BOTON */
+#reiniciarBtn {
+    margin-top: 40px;
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 15px;
+    background: #ffa500;
+    color: white;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+#reiniciarBtn:hover {
+    background: #ff8c00;
+    transform: scale(1.05);
+}
+
+/* AREA DE MANZANAS */
+.area-manzanas {
+    width: 70%;
+    padding: 40px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: visible;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-around;
+}
+
+/* CANASTA */
+.canasta {
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    width: 140px;
+    height: 100px;
+    background: linear-gradient(135deg, #d4a574 0%, #a0826d 50%, #8b7355 100%);
+    border-radius: 0 0 50px 50px;
+    border: 3px solid #6b5844;
+    box-shadow: 
+        inset -5px -5px 10px rgba(0, 0, 0, 0.3),
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        0 0 0 4px #8b7355,
+        0 0 0 5px #6b5844;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.canasta-info {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 101;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+/* TEXTURA DE LA CANASTA */
+.canasta::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px),
+        linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);
+    background-size: 15px 15px;
+    pointer-events: none;
+}
+
+/* ASA DE LA CANASTA */
+.canasta::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    width: 100px;
+    height: 50px;
+    border: 5px solid #a0826d;
+    border-top: 5px solid #a0826d;
+    border-bottom: none;
+    border-radius: 50px 50px 0 0;
+    background: linear-gradient(135deg, #d4a574 0%, #a0826d 100%);
+}
+
+/* CONTENEDOR DE MANZANAS EN LA CANASTA */
+.manzanas-en-canasta {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* MANZANA PEQUEÑA EN CANASTA */
+.manzana-canasta {
+    width: 25px;
+    height: 25px;
+    background: radial-gradient(circle at 30% 30%, #ff6b6b, #dc143c);
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(220, 20, 60, 0.4), inset -1px -1px 2px rgba(0, 0, 0, 0.2);
+    animation: aparecer 0.4s ease-out;
+}
+
+@keyframes aparecer {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* MANZANA - ANIMACIÓN DE CAÍDA A LA CANASTA */
+@keyframes caida1 {
+    0% {
+        opacity: 0;
+        transform: translateY(-300px) translateX(0) scale(0);
+        left: 10%;
+    }
+    5% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
+        left: 10%;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(500px) translateX(400px) scale(0.8);
+        left: 10%;
+    }
+}
+
+@keyframes caida2 {
+    0% {
+        opacity: 0;
+        transform: translateY(-300px) translateX(0) scale(0);
+        right: 15%;
+    }
+    5% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
+        right: 15%;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(500px) translateX(-300px) scale(0.8);
+        right: 15%;
+    }
+}
+
+@keyframes caida3 {
+    0% {
+        opacity: 0;
+        transform: translateY(-300px) translateX(0) scale(0);
+        left: 50%;
+    }
+    5% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
+        left: 50%;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(500px) translateX(100px) scale(0.8);
+        left: 50%;
+    }
+}
+
+@keyframes rotacion {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+/* MANZANA */
+.manzana {
+    width: 90px;
+    height: 90px;
+    background: radial-gradient(circle at 30% 30%, #ff6b6b, #dc143c);
+    border-radius: 50%;
+    cursor: grab;
+    position: absolute;
+    transition: all 0.2s;
+    box-shadow: 0 5px 15px rgba(220, 20, 60, 0.4), inset -2px -2px 5px rgba(0, 0, 0, 0.2);
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.manzana:active {
+    cursor: grabbing;
+}
+
+/* MANZANA GRUPO 1 - Del árbol izquierdo */
+.manzana:nth-child(3n+1) {
+    animation: caida1 10s infinite ease-in;
+}
+
+/* MANZANA GRUPO 2 - Del árbol derecho */
+.manzana:nth-child(3n+2) {
+    animation: caida2 10s infinite ease-in;
+    animation-delay: 1.5s;
+}
+
+/* MANZANA GRUPO 3 - Del árbol central */
+.manzana:nth-child(3n+3) {
+    animation: caida3 10s infinite ease-in;
+    animation-delay: 0.8s;
+}
+
+.manzana:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 20px rgba(220, 20, 60, 0.6), inset -2px -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* HOJA EN LA MANZANA */
+.manzana::before {
+    content: "";
+    width: 8px;
+    height: 20px;
+    background: #228b22;
+    position: absolute;
+    top: -10px;
+    left: 41px;
+    border-radius: 5px;
+    transform: rotate(-20deg);
+}
+
+/* PALO */
+.manzana::after {
+    content: "";
+    width: 12px;
+    height: 18px;
+    background: #8b4513;
+    position: absolute;
+    top: -18px;
+    left: 39px;
+    border-radius: 6px;
+}
+
+/* MANZANA SELECCIONADA */
+.manzana.seleccionada {
+    background: radial-gradient(circle at 30% 30%, #ffb3b3, #ff9999);
+    transform: scale(0.85);
+    box-shadow: 0 3px 10px rgba(220, 20, 60, 0.3), inset -2px -2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0.7;
+}
+
+/* ANIMACIÓN DE MANZANA HACIA LA CANASTA */
+@keyframes moverACanasta {
+    0% {
+        position: absolute;
+        bottom: auto;
+        right: auto;
+        transform: scale(0.85) translateY(0) translateX(0);
+    }
+    100% {
+        position: fixed;
+        bottom: 60px;
+        right: 55px;
+        transform: scale(0.3) translateY(0) translateX(0);
+        opacity: 0;
+    }
+}
+
+.manzana.a-canasta {
+    animation: moverACanasta 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards !important;
+}
+
+/* CONFETI */
+#confeti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
