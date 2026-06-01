@@ -114,3 +114,9 @@ document.getElementById("btnContinuar").addEventListener("click", () => {
     window.location.href = "aprendizaje1.html";
 
 });
+
+document.getElementById("btn4basico").addEventListener("click", () => {
+
+    window.location.href = "4basico.html";
+
+});
