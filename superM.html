@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermercado</title>
+    <link rel="stylesheet" type="text/css" href="css/superM.css">
+</head>
+
+<body>
+
+    <main class="contenedor">
+        <div class="header-rect">Ordena los productos de menor a mayor precio</div>
+
+        <div class="contenido">
+            <p>Haz clic en los productos en orden de menor a mayor precio. Aprenderás a comparar números grandes.</p>
+        </div>
+
+        <div class="market-rect">
+            <h2>Productos disponibles</h2>
+            <div class="products-container" id="productsContainer">
+                <button class="product-btn" data-price="2350" data-name="Caja de tomates">
+                    <span class="product-emoji">🍅</span>
+                    <span class="product-name">Caja de tomates</span>
+                    <span class="product-price">$2.350</span>
+                </button>
+                <button class="product-btn" data-price="6990" data-name="Polera">
+                    <span class="product-emoji">👕</span>
+                    <span class="product-name">Polera</span>
+                    <span class="product-price">$6.990</span>
+                </button>
+                <button class="product-btn" data-price="8450" data-name="Mochila">
+                    <span class="product-emoji">🎒</span>
+                    <span class="product-name">Mochila</span>
+                    <span class="product-price">$8.450</span>
+                </button>
+                <button class="product-btn" data-price="1250" data-name="Cuaderno">
+                    <span class="product-emoji">📓</span>
+                    <span class="product-name">Cuaderno</span>
+                    <span class="product-price">$1.250</span>
+                </button>
+            </div>
+
+            <h2>Tu orden</h2>
+            <div class="selected-order" id="selectedOrder">
+                <p class="empty-text">Haz clic en los productos en orden de menor a mayor</p>
+            </div>
+
+            <div class="actions">
+                <button id="submitBtn" class="submit-btn" style="display: none;">Verificar orden</button>
+                <button id="resetBtn" class="reset-btn">Reiniciar</button>
+            </div>
+
+            <div class="result" id="result"></div>
+        </div>
+
+        <button id="btnVolver">Volver</button>
+    </main>
+
+    <script src="js/superM.js"></script>
+</body>
+
+</html>
+
