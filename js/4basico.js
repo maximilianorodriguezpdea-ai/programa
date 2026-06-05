@@ -9,3 +9,11 @@ if (btnNumeros) {
         window.location.href = "superM.html";
     });
 }
+
+// Acción del botón Semáforo Numérico
+const btnAct2 = document.getElementById("btnAct2");
+if (btnAct2) {
+    btnAct2.addEventListener("click", () => {
+        window.location.href = "semaforo.html";
+    });
+}

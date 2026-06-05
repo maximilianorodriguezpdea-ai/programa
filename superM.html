@@ -19,28 +19,7 @@
 
         <div class="market-rect">
             <h2>Productos disponibles</h2>
-            <div class="products-container" id="productsContainer">
-                <button class="product-btn" data-price="2350" data-name="Caja de tomates">
-                    <span class="product-emoji">🍅</span>
-                    <span class="product-name">Caja de tomates</span>
-                    <span class="product-price">$2.350</span>
-                </button>
-                <button class="product-btn" data-price="6990" data-name="Polera">
-                    <span class="product-emoji">👕</span>
-                    <span class="product-name">Polera</span>
-                    <span class="product-price">$6.990</span>
-                </button>
-                <button class="product-btn" data-price="8450" data-name="Mochila">
-                    <span class="product-emoji">🎒</span>
-                    <span class="product-name">Mochila</span>
-                    <span class="product-price">$8.450</span>
-                </button>
-                <button class="product-btn" data-price="1250" data-name="Cuaderno">
-                    <span class="product-emoji">📓</span>
-                    <span class="product-name">Cuaderno</span>
-                    <span class="product-price">$1.250</span>
-                </button>
-            </div>
+            <div class="products-container" id="productsContainer"></div>
 
             <h2>Tu orden</h2>
             <div class="selected-order" id="selectedOrder">
@@ -53,10 +32,32 @@
             </div>
 
             <div class="result" id="result"></div>
+
+            <div class="final-results" id="finalResults" style="display: none;">
+                <h2>Resultados finales</h2>
+                <table class="final-table">
+                    <thead>
+                        <tr>
+                            <th>Ejercicio</th>
+                            <th>Errores</th>
+                            <th>Puntos</th>
+                        </tr>
+                    </thead>
+                    <tbody id="finalResultsBody"></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2"><strong>Total</strong></td>
+                            <td id="finalTotalPoints"><strong>0</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
         </div>
 
         <button id="btnVolver">Volver</button>
     </main>
+
+    <div id="confettiContainer" class="confetti-container"></div>
 
     <script src="js/superM.js"></script>
 </body>

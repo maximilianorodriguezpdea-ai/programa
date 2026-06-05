@@ -80,6 +80,7 @@ body {
     color: #102a5e;
 }
 
+
 .items-grid,
 .market-grid {
     display: grid;
@@ -280,6 +281,77 @@ body {
 
 .result.error {
     border: 1px solid #ff6b6b;
+}
+
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 18px;
+    opacity: 0.9;
+    transform: rotate(15deg);
+    animation: confetti-fall 4s ease-out forwards;
+}
+
+@keyframes confetti-fall {
+    0% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(120vh) rotate(720deg);
+    }
+}
+
+.final-results {
+    margin-top: 24px;
+    text-align: left;
+}
+
+.final-results h2 {
+    margin-bottom: 14px;
+    color: #102a5e;
+}
+
+.final-results .final-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.final-results th,
+.final-results td {
+    padding: 12px 14px;
+    border-bottom: 1px solid rgba(16, 42, 94, 0.12);
+    font-weight: 600;
+    color: #102a5e;
+}
+
+.final-results th {
+    background: rgba(16, 42, 94, 0.08);
+    text-align: left;
+}
+
+.final-results tbody tr:nth-child(odd) {
+    background: rgba(16, 42, 94, 0.04);
+}
+
+.final-results tfoot td {
+    background: rgba(16, 42, 94, 0.08);
+    font-size: 1rem;
 }
 
 .challenge {

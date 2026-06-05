@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semáforo Numérico</title>
+    <link rel="stylesheet" href="css/semaforo.css">
+</head>
+<body>
+    <main class="page-container">
+        <header class="header-card">
+            <h1>Semáforo Numérico</h1>
+            <p>Arrastra cada número al color correcto según el valor:</p>
+            <ul>
+                <li>🟢 mayor que <strong>5.000</strong></li>
+                <li>🟡 entre <strong>2.000</strong> y <strong>5.000</strong></li>
+                <li>🔴 menor que <strong>2.000</strong></li>
+            </ul>
+        </header>
+
+        <section class="board">
+            <div id="roundInfo" class="round-info">Ejercicio 1 / 5</div>
+
+            <div class="cards-panel">
+                <h2>Números</h2>
+                <div class="numbers-container" id="numbersContainer"></div>
+            </div>
+
+            <div class="drop-zones">
+                <div class="drop-zone drop-green" data-color="green">
+                    <div class="drop-label">🟢 Mayor a 5.000</div>
+                </div>
+                <div class="drop-zone drop-yellow" data-color="yellow">
+                    <div class="drop-label">🟡 Entre 2.000 y 5.000</div>
+                </div>
+                <div class="drop-zone drop-red" data-color="red">
+                    <div class="drop-label">🔴 Menor a 2.000</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="actions">
+            <button id="checkBtn">Verificar</button>
+            <button id="resetBtn">Reiniciar</button>
+        </div>
+
+        <div id="result" class="result"></div>
+
+        <div class="final-results" id="finalResults" style="display: none;">
+            <h2>Resultados finales</h2>
+            <table class="final-table">
+                <thead>
+                    <tr>
+                        <th>Ejercicio</th>
+                        <th>Correctas/Total</th>
+                        <th>Puntos</th>
+                    </tr>
+                </thead>
+                <tbody id="finalResultsBody"></tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2"><strong>Total</strong></td>
+                        <td id="finalTotalPoints"><strong>0</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <button id="btnVolver">Volver</button>
+    </main>
+
+    <div id="confettiContainer" class="confetti-container"></div>
+
+    <script src="js/semaforo.js"></script>
+</body>
+</html>
