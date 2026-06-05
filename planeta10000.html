@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planeta 10000</title>
+    <link rel="stylesheet" href="css/planeta10000.css">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header class="intro-card">
+            <div class="intro-text">
+                <h1>Bienvenido al Planeta 10000</h1>
+                <p>Este juego se trata de apretar asteroides que tengan números iguales o menores a 1000. En la primera ronda aparecen 20 asteroides con números aleatorios, con mayor probabilidad de salir entre 0 y 1000.</p>
+                <p class="subtext">Apretá solo los asteroides correctos. Si tocas uno mayor a 1000, perderás puntos.</p>
+                <button id="startBtn" class="primary-button start-button">Iniciar</button>
+            </div>
+        </header>
+
+        <main class="game-area hidden">
+            <section class="status-bar">
+                <div class="status-item">Correctos: <span id="correctCount">0</span></div>
+                <div class="status-item">Erróneos: <span id="wrongCount">0</span></div>
+                <button id="resetBtn" class="primary-button">Reiniciar</button>
+            </section>
+
+            <div id="resultMessage" class="result-message hidden"></div>
+        </main>
+
+        <div id="meteorContainer" class="meteor-container"></div>
+        <div id="confettiContainer" class="confetti-container"></div>
+    </div>
+
+    <script src="js/planeta10000.js" defer></script>
+</body>
+
+</html>
