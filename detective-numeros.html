@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detective de Numeros</title>
+    <link rel="stylesheet" href="css/detective-numeros.css">
+</head>
+<body>
+    <main class="detective-app">
+        <section class="panel">
+            <div class="encabezado">
+                <button id="btn-volver" class="boton-redondo" title="Volver">←</button>
+                <div>
+                    <h1>Detective de Numeros</h1>
+                    <p>Descubre el numero secreto entre 0 y 10.000 haciendo preguntas inteligentes.</p>
+                </div>
+            </div>
+
+            <div class="caso">
+                <span class="etiqueta">Caso actual</span>
+                <strong id="estado-caso">Numero secreto listo</strong>
+                <p id="mensaje">Haz una pregunta o escribe tu sospecha.</p>
+            </div>
+
+            <div class="marcadores">
+                <div>
+                    <span>Preguntas</span>
+                    <strong id="contador-preguntas">0</strong>
+                </div>
+                <div>
+                    <span>Intentos</span>
+                    <strong id="contador-intentos">0</strong>
+                </div>
+                <div>
+                    <span>Puntos</span>
+                    <strong id="puntos">1000</strong>
+                </div>
+            </div>
+
+            <div class="respuesta-final">
+                <label for="input-respuesta">Tu sospecha</label>
+                <div>
+                    <input id="input-respuesta" type="number" min="0" max="10000" placeholder="Ej: 7420">
+                    <button id="btn-adivinar">Adivinar</button>
+                </div>
+            </div>
+
+            <div class="acciones">
+                <button id="btn-nuevo-juego">Nuevo caso</button>
+                <button id="btn-pista">Pista facil</button>
+                <button id="btn-rendirse">Mostrar numero</button>
+            </div>
+        </section>
+
+        <section class="tablero">
+            <div class="bloque">
+                <h2>Preguntas rapidas</h2>
+                <div class="preguntas-grid">
+                    <button data-pregunta="mayor-5000">¿Es mayor que 5.000?</button>
+                    <button data-pregunta="menor-5000">¿Es menor que 5.000?</button>
+                    <button data-pregunta="cuatro-cifras">¿Tiene 4 cifras?</button>
+                    <button data-pregunta="cinco-cifras">¿Tiene 5 cifras?</button>
+                    <button data-pregunta="multiplo-10">¿Es multiplo de 10?</button>
+                    <button data-pregunta="multiplo-100">¿Es multiplo de 100?</button>
+                    <button data-pregunta="par">¿Es par?</button>
+                    <button data-pregunta="impar">¿Es impar?</button>
+                </div>
+            </div>
+
+            <div class="bloque">
+                <h2>Pregunta personalizada</h2>
+                <div class="personalizada">
+                    <select id="tipo-pregunta">
+                        <option value="mayor">¿Es mayor que...?</option>
+                        <option value="menor">¿Es menor que...?</option>
+                        <option value="igual">¿Es igual a...?</option>
+                        <option value="multiplo">¿Es multiplo de...?</option>
+                    </select>
+                    <input id="valor-pregunta" type="number" min="0" max="10000" placeholder="Numero">
+                    <button id="btn-preguntar">Preguntar</button>
+                </div>
+            </div>
+
+            <div class="bloque historial-bloque">
+                <h2>Libreta del detective</h2>
+                <ul id="historial" class="historial">
+                    <li>El numero secreto esta entre 0 y 10.000.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <canvas id="confeti"></canvas>
+    <script src="js/detective-numeros.js"></script>
+</body>
+</html>

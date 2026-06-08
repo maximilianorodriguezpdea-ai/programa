@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo de los Miles</title>
+    <link rel="stylesheet" href="css/bingo-miles.css">
+</head>
+<body>
+    <main class="bingo-app">
+        <section class="panel-juego">
+            <div class="encabezado">
+                <button id="btn-volver" class="boton-icono" title="Volver">←</button>
+                <div>
+                    <h1>Bingo de los Miles</h1>
+                    <p>Marca el numero que corresponde a la pista cantada.</p>
+                </div>
+            </div>
+
+            <div class="pista-card">
+                <span class="etiqueta">Pista actual</span>
+                <p id="pista">Presiona Nueva pista para comenzar.</p>
+                <div id="respuesta" class="respuesta oculto"></div>
+            </div>
+
+            <div class="controles">
+                <button id="btn-nueva-pista">Nueva pista</button>
+                <button id="btn-leer-pista">Leer pista</button>
+                <button id="btn-mostrar-respuesta">Mostrar respuesta</button>
+                <button id="btn-nuevo-carton">Nuevo carton</button>
+            </div>
+
+            <div class="estado">
+                <div>
+                    <span>Aciertos</span>
+                    <strong id="aciertos">0</strong>
+                </div>
+                <div>
+                    <span>Ronda</span>
+                    <strong><span id="ronda">0</span>/12</strong>
+                </div>
+                <div>
+                    <span>Lineas</span>
+                    <strong id="lineas">0</strong>
+                </div>
+            </div>
+
+            <div id="mensaje" class="mensaje">Completa una linea horizontal, vertical o diagonal.</div>
+
+            <div id="resultado-final" class="resultado-final oculto" aria-live="polite">
+                <h2>Resultado final</h2>
+                <table>
+                    <tr>
+                        <th>Aciertos</th>
+                        <td id="tabla-aciertos">0</td>
+                    </tr>
+                    <tr>
+                        <th>Puntos</th>
+                        <td id="tabla-puntos">0</td>
+                    </tr>
+                    <tr>
+                        <th>Mensaje</th>
+                        <td id="tabla-mensaje">Sigue jugando</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section class="carton-zona">
+            <div class="carton-header">
+                <h2>Carton</h2>
+                <button id="btn-reiniciar">Reiniciar marcas</button>
+            </div>
+            <div id="carton" class="carton" aria-label="Carton de bingo"></div>
+        </section>
+    </main>
+
+    <canvas id="confeti"></canvas>
+    <script src="js/bingo-miles.js"></script>
+</body>
+</html>

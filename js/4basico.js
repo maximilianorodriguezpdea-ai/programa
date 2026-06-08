@@ -26,3 +26,17 @@ if (btnAct3) {
     });
 }
 
+const btnAct4 = document.getElementById("btnAct4");
+if (btnAct4) {
+    btnAct4.addEventListener("click", () => {
+        window.location.href = "bingo-miles.html";
+    });
+}
+
+const btnAct5 = document.getElementById("btnAct5");
+if (btnAct5) {
+    btnAct5.addEventListener("click", () => {
+        window.location.href = "detective-numeros.html";
+    });
+}
+

@@ -1,0 +1,298 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #202b35;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)),
+        repeating-linear-gradient(0deg, #d9e7f2 0 2px, transparent 2px 42px),
+        repeating-linear-gradient(90deg, #d9e7f2 0 2px, #f7fbff 2px 42px);
+}
+
+.detective-app {
+    width: min(1160px, calc(100% - 32px));
+    min-height: 100vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 22px;
+    align-items: center;
+    padding: 24px 0;
+}
+
+.panel,
+.bloque {
+    background: rgba(255, 255, 255, 0.92);
+    border: 2px solid rgba(35, 58, 77, 0.12);
+    border-radius: 8px;
+    box-shadow: 0 16px 32px rgba(35, 58, 77, 0.16);
+}
+
+.panel {
+    padding: 22px;
+}
+
+.tablero {
+    display: grid;
+    gap: 16px;
+}
+
+.encabezado {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+h1,
+h2,
+p {
+    margin: 0;
+}
+
+h1 {
+    color: #173f5f;
+    font-size: 31px;
+    line-height: 1.05;
+}
+
+h2 {
+    color: #173f5f;
+    font-size: 23px;
+    margin-bottom: 14px;
+}
+
+.encabezado p {
+    margin-top: 8px;
+    line-height: 1.4;
+    color: #596b78;
+}
+
+.boton-redondo {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 24px;
+}
+
+.caso {
+    margin-top: 26px;
+    min-height: 154px;
+    padding: 18px;
+    border-radius: 8px;
+    background: #fff7d8;
+    border: 2px dashed #c99a1d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.etiqueta {
+    color: #876203;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0;
+}
+
+#estado-caso {
+    display: block;
+    margin-top: 8px;
+    font-size: 25px;
+    color: #32280b;
+}
+
+#mensaje {
+    margin-top: 10px;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.marcadores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.marcadores div {
+    padding: 12px 8px;
+    border-radius: 8px;
+    background: #eef6fb;
+    text-align: center;
+}
+
+.marcadores span {
+    display: block;
+    color: #63717a;
+    font-size: 13px;
+}
+
+.marcadores strong {
+    display: block;
+    margin-top: 4px;
+    font-size: 24px;
+    color: #173f5f;
+}
+
+.respuesta-final {
+    margin-top: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #405462;
+    font-weight: 700;
+}
+
+.respuesta-final div,
+.personalizada {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+}
+
+.personalizada {
+    grid-template-columns: 190px 1fr auto;
+}
+
+input,
+select {
+    min-height: 44px;
+    width: 100%;
+    border: 2px solid #c9d7df;
+    border-radius: 8px;
+    padding: 0 12px;
+    background: white;
+    color: #1f2e38;
+    font-size: 16px;
+}
+
+button {
+    min-height: 44px;
+    border: none;
+    border-radius: 8px;
+    padding: 0 16px;
+    background: #173f5f;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+button:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+    transform: none;
+}
+
+.acciones {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+#btn-adivinar,
+#btn-preguntar {
+    background: #d45d2a;
+}
+
+#btn-pista {
+    background: #5f7f33;
+}
+
+#btn-rendirse {
+    background: #7a4057;
+}
+
+.bloque {
+    padding: 20px;
+}
+
+.preguntas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.preguntas-grid button {
+    min-height: 64px;
+    background: #2b6777;
+}
+
+.historial-bloque {
+    min-height: 260px;
+}
+
+.historial {
+    margin: 0;
+    padding-left: 22px;
+    max-height: 330px;
+    overflow: auto;
+}
+
+.historial li {
+    margin-bottom: 9px;
+    line-height: 1.35;
+    font-weight: 700;
+}
+
+.historial .si {
+    color: #1c6b31;
+}
+
+.historial .no {
+    color: #9a2c20;
+}
+
+.historial .final {
+    color: #173f5f;
+}
+
+#confeti {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+@media (max-width: 940px) {
+    .detective-app {
+        grid-template-columns: 1fr;
+        align-items: start;
+    }
+
+    .preguntas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .detective-app {
+        width: min(100% - 20px, 1160px);
+        padding: 10px 0;
+    }
+
+    .panel,
+    .bloque {
+        padding: 14px;
+    }
+
+    .marcadores,
+    .respuesta-final div,
+    .personalizada,
+    .preguntas-grid {
+        grid-template-columns: 1fr;
+    }
+}
