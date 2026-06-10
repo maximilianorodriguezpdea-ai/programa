@@ -1,8 +1,8 @@
-document.getElementById("btnVolver").addEventListener("click", () => {
+﻿document.getElementById("btnVolver").addEventListener("click", () => {
     window.location.href = "indexbienvenida.html";
 });
 
-// Acción del primer botón: redirige a la nueva actividad de supermercado
+// AcciÃ³n del primer botÃ³n: redirige a la nueva actividad de supermercado
 const btnNumeros = document.getElementById("btnNumeros");
 if (btnNumeros) {
     btnNumeros.addEventListener("click", () => {
@@ -10,7 +10,7 @@ if (btnNumeros) {
     });
 }
 
-// Acción del botón Semáforo Numérico
+// AcciÃ³n del botÃ³n SemÃ¡foro NumÃ©rico
 const btnAct2 = document.getElementById("btnAct2");
 if (btnAct2) {
     btnAct2.addEventListener("click", () => {
@@ -18,7 +18,7 @@ if (btnAct2) {
     });
 }
 
-// Acción del botón Planeta 10.000
+// AcciÃ³n del botÃ³n Planeta 10.000
 const btnAct3 = document.getElementById("btnAct3");
 if (btnAct3) {
     btnAct3.addEventListener("click", () => {
@@ -39,4 +39,12 @@ if (btnAct5) {
         window.location.href = "detective-numeros.html";
     });
 }
+
+const btnAct6 = document.getElementById("btnAct6");
+if (btnAct6) {
+    btnAct6.addEventListener("click", () => {
+        window.location.href = "ordenrelampago.html";
+    });
+}
+
 

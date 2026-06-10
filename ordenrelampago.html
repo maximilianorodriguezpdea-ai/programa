@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orden Relampago</title>
+    <link rel="stylesheet" href="css/ordenrelampago.css">
+</head>
+<body>
+    <main class="orden-app">
+        <section class="panel-control">
+            <div class="encabezado">
+                <button id="btn-volver" class="boton-icono" title="Volver">&larr;</button>
+                <div>
+                    <h1>Orden Relampago</h1>
+                    <p>Reparte tarjetas y ordenen los numeros de menor a mayor antes de que termine el tiempo.</p>
+                </div>
+            </div>
+
+            <div class="ajustes" aria-label="Ajustes del juego">
+                <label>
+                    Estudiantes
+                    <input id="cantidad" type="number" min="3" max="12" value="6">
+                </label>
+                <label>
+                    Desde
+                    <input id="minimo" type="number" min="0" max="9999" value="100">
+                </label>
+                <label>
+                    Hasta
+                    <input id="maximo" type="number" min="1" max="10000" value="10000">
+                </label>
+                <label>
+                    Segundos
+                    <input id="segundos" type="number" min="10" max="180" value="45">
+                </label>
+            </div>
+
+            <div class="controles">
+                <button id="btn-generar">Nuevas tarjetas</button>
+                <button id="btn-iniciar">Iniciar tiempo</button>
+                <button id="btn-iniciar-serie">Iniciar serie (10)</button>
+                <button id="btn-detener">Detener</button>
+                <button id="btn-revisar">Mostrar orden</button>
+            </div>
+
+            <div class="marcador">
+                <div>
+                    <span>Tiempo</span>
+                    <strong id="tiempo">45</strong>
+                </div>
+                <div>
+                    <span>Tarjetas</span>
+                    <strong id="total-tarjetas">6</strong>
+                </div>
+                <div>
+                    <span>Mejor marca</span>
+                    <strong id="mejor-tiempo">--</strong>
+                </div>
+            </div>
+
+            <div id="mensaje" class="mensaje">Entrega una tarjeta a cada estudiante y presiona Iniciar tiempo.</div>
+        </section>
+
+        <section class="zona-juego">
+            <div class="zona-header">
+                <h2>Tarjetas para repartir</h2>
+                <button id="btn-mezclar">Mezclar</button>
+            </div>
+            <div id="tarjetas" class="tarjetas" aria-label="Tarjetas numericas"></div>
+
+            <div id="respuesta" class="respuesta oculto">
+                <h2>Orden correcto</h2>
+                <div id="orden-correcto" class="orden-correcto"></div>
+            </div>
+
+            <div id="confetti" class="confetti"></div>
+        </section>
+    </main>
+
+    <script src="js/ordenrelampago.js"></script>
+</body>
+</html>
+
