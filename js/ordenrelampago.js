@@ -360,5 +360,7 @@ if (btnRevisar) btnRevisar.addEventListener("click", mostrarOrden);
 if (btnMezclar) btnMezclar.addEventListener("click", mezclarTarjetas);
 if (btnVolver) btnVolver.addEventListener("click", () => { window.location.href = "4basico.html"; });
 
+hablar('Ordena las tarjetas de menor a mayor. Cuando tengas el orden correcto, presiona revisar para ver tu puntaje.');
+
 // Inicializar: mostrar tarjetas para un ejercicio, pero no iniciar la serie automáticamente
 generarNumeros();

@@ -55,4 +55,10 @@ if (btnAct6) {
     });
 }
 
+const btnTodos = document.getElementById("btnTodos");
+if (btnTodos) {
+    btnTodos.addEventListener("click", () => {
+        window.location.href = "todos.html";
+    });
+}
 

@@ -354,3 +354,4 @@ btnVolver.addEventListener("click", () => {
 });
 
 nuevoCarton();
+hablar('Este juego es un bingo de miles. Presiona nueva pista para recibir una pista y marca el número correcto en el cartón.');

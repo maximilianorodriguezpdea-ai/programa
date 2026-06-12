@@ -235,4 +235,6 @@ document.getElementById('btnVolver').addEventListener('click', () => {
     window.location.href = '4basico.html';
 });
 
+speakMessage('Arrastra cada número al semáforo de color correcto: rojo para menos de 2000, amarillo para entre 2000 y 5000, verde para más de 5000. Luego presiona revisar.');
+
 createNumberCards();

@@ -20,6 +20,8 @@ function hablar(texto) {
     speechSynthesis.speak(voz);
 }
 
+hablar('Coloca manzanas en la canasta hasta completar el resultado de la suma. Puedes hacer clic o arrastrar manzanas a la canasta.');
+
 /* GENERAR EJERCICIO - SOLO SUMAS */
 function generarEjercicio() {
 

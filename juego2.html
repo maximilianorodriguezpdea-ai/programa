@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego 2 - Cuenta y empareja</title>
+    <link rel="stylesheet" href="css/basico4.css">
+</head>
+<body data-page="juego2">
+    <div class="page-shell">
+        <header class="page-header">
+            <div>
+                <h1>Juego 2: Cuenta y empareja</h1>
+                <p id="instructionText">Arrastra cada imagen a la cantidad correcta. Escucha el nombre de cada imagen al tocarla.</p>
+            </div>
+            <div class="score-badge">
+                <span class="icon">🍎</span>
+                Puntuación: <span id="scoreValue">0</span>
+            </div>
+        </header>
+
+        <main class="page-content">
+            <section class="game-panel">
+                <div class="card">
+                    <h2>Imágenes</h2>
+                    <div id="draggableItems" class="draggable-row"></div>
+                </div>
+                <div class="card">
+                    <h2>Cantidades</h2>
+                    <div id="dropZones" class="droppable-row"></div>
+                </div>
+                <div class="card message-box" id="feedback">Presiona comenzar y relaciona cada imagen con su número.</div>
+                <div class="controls">
+                    <button id="startBtn" class="boton-principal">Comenzar</button>
+                    <button id="checkBtn" class="button-action">Verificar</button>
+                    <button id="resetBtn" class="button-secondary">Reiniciar</button>
+                    <button id="nextBtn" class="boton-principal hidden">Siguiente nivel</button>
+                </div>
+            </section>
+        </main>
+        <div class="confetti-container"></div>
+    </div>
+    <script src="js/juegos.js"></script>
+</body>
+</html>

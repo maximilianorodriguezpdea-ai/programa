@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos los juegos</title>
+    <link rel="stylesheet" href="css/basico4.css">
+</head>
+<body data-page="todos">
+    <div class="page-shell">
+        <header class="page-header">
+            <div>
+                <h1>Menú de juegos y lecciones</h1>
+                <p>Selecciona la página que quieres visitar. Usa los botones para escuchar cada opción si quieres.</p>
+            </div>
+            <div class="score-badge">
+                <span class="icon">🎯</span>
+                Puntuación: <span id="scoreValue">0</span>
+            </div>
+        </header>
+
+        <main class="page-content">
+            <section class="card">
+                <h2>Ir a una página</h2>
+                <div class="match-grid">
+                    <button class="boton-principal" data-speak="Ir a la lección de aprendizaje" onclick="window.location.href='basico4.html'">Aprendizaje</button>
+                    <button class="boton-principal" data-speak="Comenzar el juego uno" onclick="window.location.href='juego1.html'">Juego 1</button>
+                    <button class="boton-principal" data-speak="Comenzar el juego dos" onclick="window.location.href='juego2.html'">Juego 2</button>
+                    <button class="boton-principal" data-speak="Comenzar el juego tres" onclick="window.location.href='juego3.html'">Juego 3</button>
+                    <button class="boton-principal" data-speak="Comenzar el juego cuatro" onclick="window.location.href='juego4.html'">Juego 4</button>
+                    <button class="boton-principal" data-speak="Comenzar el juego cinco" onclick="window.location.href='juego5.html'">Juego 5</button>
+                    <button class="button-secondary" data-speak="Ver la página final" onclick="window.location.href='final.html'">Página final</button>
+                    <button class="button-secondary" data-speak="Volver al menú de cuarto básico" onclick="window.location.href='4basico.html'">Volver a 4basico</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/juegos.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendizaje 4° Básico</title>
+    <link rel="stylesheet" href="css/basico4.css">
+</head>
+<body data-page="basico4">
+    <div class="page-shell">
+        <header class="page-header">
+            <div>
+                <h1>Aprende con Números y Palabras</h1>
+                <p id="lessonIntro">En este aprendizaje exploramos cantidades, palabras y sonidos para jugar mejor en los cinco juegos.</p>
+            </div>
+            <div class="score-badge">
+                <span class="icon">⭐</span>
+                Puntuación: <span id="scoreValue">0</span>
+            </div>
+        </header>
+
+        <main class="page-content">
+            <section class="hero-grid">
+                <article class="card">
+                    <h2>¿Qué vas a aprender?</h2>
+                    <p>Vamos a ver cómo usar números, encontrar palabras y escuchar sonidos mientras juegas. Cada lección tiene imágenes, audios y explicaciones simples para niños de cuarto básico.</p>
+                    <ul>
+                        <li>Leer números y palabras.</li>
+                        <li>Relacionar imágenes con sonidos.</li>
+                        <li>Jugar con arrastrar y soltar.</li>
+                    </ul>
+                    <div class="button-group">
+                        <button class="boton-principal boton-primario" id="btnStartGames">Ir a los juegos</button>
+                        <button class="button-secondary" onclick="window.location.href='todos.html'">Ver todos los juegos</button>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="img/OIP.jpg" alt="Imagen educativa" />
+                    <p class="violet-text">Imágenes, sonidos y explicaciones visuales para que el aprendizaje sea fácil y divertido.</p>
+                </article>
+            </section>
+
+            <section class="card">
+                <h2>Escucha y aprende</h2>
+                <div class="audio-list">
+                    <div class="audio-card">
+                        <span>Números del 1 al 10</span>
+                        <button class="audio-play" data-text="En esta lección aprenderás los números del uno al diez con sonidos y dibujos.">Escuchar</button>
+                    </div>
+                    <div class="audio-card">
+                        <span>Palabras y objetos</span>
+                        <button class="audio-play" data-text="Mira las imágenes y aprende a relacionar objetos con nombres y cantidades.">Escuchar</button>
+                    </div>
+                    <div class="audio-card">
+                        <span>Drag and drop</span>
+                        <button class="audio-play" data-text="En los juegos arrastra los elementos a las zonas correctas y recibe retroalimentación sonora.">Escuchar</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Contenido visual</h2>
+                <div class="match-grid">
+                    <div class="audio-card">
+                        <strong>1. Contar</strong>
+                        <p>Usa los números para contar elementos y aprender cantidades.</p>
+                    </div>
+                    <div class="audio-card">
+                        <strong>2. Relacionar</strong>
+                        <p>Une imágenes con palabras y cifras correctas.</p>
+                    </div>
+                    <div class="audio-card">
+                        <strong>3. Leer</strong>
+                        <p>Escucha los audios y lee las palabras sencillas.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <div class="confetti-container"></div>
+    </div>
+    <script src="js/juegos.js"></script>
+</body>
+</html>

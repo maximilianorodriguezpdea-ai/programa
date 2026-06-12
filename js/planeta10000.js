@@ -265,3 +265,5 @@ resetButton.addEventListener('click', () => {
     resultMessage.classList.add('hidden');
     startMeteorShower();
 });
+
+speak('Presiona iniciar para comenzar. Toca los meteoritos con los números correctos en cada ronda y evita los meteoritos incorrectos.');

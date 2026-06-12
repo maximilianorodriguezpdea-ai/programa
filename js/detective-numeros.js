@@ -348,3 +348,4 @@ valorPregunta.addEventListener("keydown", (evento) => {
 });
 
 nuevoJuego();
+hablar('Adivina el número secreto entre 0 y 10.000 usando preguntas. Haz preguntas rápidas o escribe una pregunta personalizada para descubrir el número.');

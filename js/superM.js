@@ -312,6 +312,8 @@ function loadRound(roundIndex) {
 
 loadRound(currentRound);
 
+speakMessage('Selecciona los productos de menor a mayor precio y luego presiona enviar para comprobar tu orden.');
+
 submitBtn.addEventListener('click', verifyOrder);
 resetBtn.addEventListener('click', resetGame);
 

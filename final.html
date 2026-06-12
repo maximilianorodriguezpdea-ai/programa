@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final del proyecto</title>
+    <link rel="stylesheet" href="css/basico4.css">
+</head>
+<body data-page="final">
+    <div class="page-shell">
+        <header class="page-header">
+            <div>
+                <h1>¡Felicidades!</h1>
+                <p>Has completado los cinco juegos. Mira tu puntaje final y celebra tu logro.</p>
+            </div>
+            <div class="score-badge">
+                <span class="icon">🏆</span>
+                Total: <span id="scoreValue">0</span>
+            </div>
+        </header>
+
+        <main class="page-content">
+            <section class="card">
+                <h2>Puntuación total</h2>
+                <div class="message-box">
+                    <p>Tu puntaje total es:</p>
+                    <p style="font-size: 3rem; margin: 0.5rem 0; font-weight: 800;" id="finalScore">0</p>
+                    <p id="finalMessage">Revisa tu esfuerzo y vuelve a jugar para mejorar.</p>
+                </div>
+                <div class="final-stars">
+                    <span class="star">⭐</span>
+                    <span class="star">⭐</span>
+                    <span class="star">⭐</span>
+                </div>
+            </section>
+
+            <section class="card controls">
+                <button id="btnRestart" class="boton-principal">Volver a aprender</button>
+                <button class="button-secondary" onclick="window.location.href='todos.html'">Ver todos los juegos</button>
+                <button class="button-secondary" onclick="window.location.href='4basico.html'">Volver al menú 4basico</button>
+            </section>
+        </main>
+        <div class="confetti-container"></div>
+    </div>
+    <script src="js/juegos.js"></script>
+</body>
+</html>
