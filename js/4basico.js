@@ -1,6 +1,14 @@
-﻿document.getElementById("btnVolver").addEventListener("click", () => {
-    window.location.href = "indexbienvenida.html";
-});
+﻿function hablar(texto) {
+    if (!window.speechSynthesis) return;
+    const voz = new SpeechSynthesisUtterance(texto);
+    voz.lang = 'es-ES';
+    speechSynthesis.cancel();
+    speechSynthesis.speak(voz);
+}
+
+// Bienvenida
+hablar('Bienvenido a los juegos de cuarto básico. Elige un juego para empezar.');
+
 
 // AcciÃ³n del primer botÃ³n: redirige a la nueva actividad de supermercado
 const btnNumeros = document.getElementById("btnNumeros");

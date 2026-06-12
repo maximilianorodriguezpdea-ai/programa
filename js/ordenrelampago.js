@@ -17,6 +17,7 @@ const btnRevisar = document.getElementById("btn-revisar");
 const btnMezclar = document.getElementById("btn-mezclar");
 const btnVolver = document.getElementById("btn-volver");
 const confettiContainer = document.getElementById("confetti");
+const resultadosContainer = document.getElementById("resultados");
 
 let numeros = [];
 let temporizador = null;
@@ -29,6 +30,7 @@ let ejercicioActual = 0;
 let puntuacion = 0;
 let resultadosEjercicios = [];
 let enSerie = false;
+let ejercicioFinalizado = false;
 
 function azar(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -112,6 +114,16 @@ function dibujarTarjetas() {
 }
 
 function alArrastrar(evento) {
+    // Activar modo serie al primer arrastre para avanzar automáticamente hasta 10 ejercicios
+    if (!enSerie) {
+        enSerie = true;
+        if (ejercicioActual === 0) {
+            ejercicioActual = 1;
+            cambiarMensaje(`Ejercicio ${ejercicioActual} de ${TOTAL_EJERCICIOS}. Preparen y ordenen de menor a mayor.`, "alerta");
+        }
+    }
+    // Iniciar temporizador automáticamente al comenzar a arrastrar
+    try { iniciarTiempo(); } catch (e) { /* iniciarTiempo puede no estar disponible aún */ }
     evento.currentTarget.classList.add("arrastrando");
     evento.dataTransfer.setData("text/plain", evento.currentTarget.dataset.numero);
 }
@@ -153,6 +165,7 @@ function iniciarTiempo() {
 
     respuesta.classList.add("oculto");
     segundosIniciales = Math.min(180, Math.max(10, Number(segundosInput.value) || segundosIniciales));
+
     if (segundosRestantes <= 0 || segundosRestantes > segundosIniciales) {
         segundosRestantes = segundosIniciales;
     }
@@ -225,8 +238,15 @@ function cambiarMensaje(texto, tipo) {
     mensaje.className = `mensaje ${tipo}`;
 }
 
+function ocultarResultados() {
+    resultadosContainer.classList.add("oculto");
+    resultadosContainer.innerHTML = "";
+}
+
 function iniciarEjercicio() {
     if (ejercicioActual >= TOTAL_EJERCICIOS) return;
+    ejercicioFinalizado = false;
+    ocultarResultados();
     ejercicioActual += 1;
     generarNumeros();
     cambiarMensaje(`Ejercicio ${ejercicioActual} de ${TOTAL_EJERCICIOS}. Preparen y presionen Iniciar tiempo.`, "");
@@ -236,25 +256,51 @@ function iniciarJuego() {
     ejercicioActual = 0;
     puntuacion = 0;
     resultadosEjercicios = [];
+    ocultarResultados();
+    minimoInput.value = 1000;
+    maximoInput.value = 10000;
     iniciarEjercicio();
 }
 
+function crearTablaResultados(correctas) {
+    const puntos = correctas * 100;
+    const total = TOTAL_EJERCICIOS;
+    const estado = correctas === total ? 'Perfecto' : `${correctas} de ${total} correctos`;
+
+    resultadosContainer.innerHTML = `
+        <h2>Resultados finales</h2>
+        <table>
+            <tr><th>Ítem</th><th>Valor</th></tr>
+            <tr><td>Ejercicios correctos</td><td>${correctas} / ${total}</td></tr>
+            <tr><td>Puntaje</td><td>${puntos}</td></tr>
+            <tr><td>Evaluación</td><td>${estado}</td></tr>
+        </table>
+    `;
+    resultadosContainer.classList.remove("oculto");
+}
+
 function finalizarEjercicio(correcto) {
+    if (ejercicioFinalizado) return;
+    ejercicioFinalizado = true;
     detenerTiempo();
     mostrarOrden();
     resultadosEjercicios.push(Boolean(correcto));
+    
+    const ejerciciosRestantes = TOTAL_EJERCICIOS - ejercicioActual;
+    const textoRestantes = ejerciciosRestantes === 1 ? 'falta 1 ejercicio' : `faltan ${ejerciciosRestantes} ejercicios`;
+    
     if (correcto) {
         puntuacion += 100;
-        cambiarMensaje(`¡Correcto! +100 puntos. Total: ${puntuacion}`, "exito");
+        cambiarMensaje(`✓ ¡Correcto! +100 puntos. Total: ${puntuacion}. ${textoRestantes}`, "exito");
     } else {
-        cambiarMensaje(`No fue correcto. Total: ${puntuacion}`, "alerta");
+        cambiarMensaje(`✗ Incorrecto. Total: ${puntuacion}. ${textoRestantes}`, "alerta");
     }
 
     if (enSerie) {
         if (ejercicioActual < TOTAL_EJERCICIOS) {
             setTimeout(() => {
                 iniciarEjercicio();
-            }, 1200);
+            }, 800);
         } else {
             setTimeout(() => {
                 mostrarResultados();
@@ -265,6 +311,7 @@ function finalizarEjercicio(correcto) {
 
 function mostrarResultados() {
     cambiarMensaje(`Serie completada. Total: ${puntuacion} / ${TOTAL_EJERCICIOS * 100}`, "exito");
+    crearTablaResultados(resultadosEjercicios.filter(Boolean).length);
 
     // Voz y confeti según puntaje
     if (puntuacion >= 750) {
@@ -305,15 +352,13 @@ function lanzarConfeti() {
     setTimeout(() => { confettiContainer.innerHTML = ''; }, 8000);
 }
 
-btnGenerar.addEventListener("click", generarNumeros);
-btnIniciar.addEventListener("click", iniciarTiempo);
-btnIniciarSerie.addEventListener("click", () => { enSerie = true; iniciarJuego(); });
-btnDetener.addEventListener("click", detenerYGuardar);
-btnRevisar.addEventListener("click", mostrarOrden);
-btnMezclar.addEventListener("click", mezclarTarjetas);
-btnVolver.addEventListener("click", () => {
-    window.location.href = "4basico.html";
-});
+if (btnGenerar) btnGenerar.addEventListener("click", generarNumeros);
+if (btnIniciar) btnIniciar.addEventListener("click", iniciarTiempo);
+if (btnIniciarSerie) btnIniciarSerie.addEventListener("click", () => { enSerie = true; iniciarJuego(); });
+if (btnDetener) btnDetener.addEventListener("click", detenerYGuardar);
+if (btnRevisar) btnRevisar.addEventListener("click", mostrarOrden);
+if (btnMezclar) btnMezclar.addEventListener("click", mezclarTarjetas);
+if (btnVolver) btnVolver.addEventListener("click", () => { window.location.href = "4basico.html"; });
 
 // Inicializar: mostrar tarjetas para un ejercicio, pero no iniciar la serie automáticamente
 generarNumeros();

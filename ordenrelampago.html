@@ -36,13 +36,7 @@
                 </label>
             </div>
 
-            <div class="controles">
-                <button id="btn-generar">Nuevas tarjetas</button>
-                <button id="btn-iniciar">Iniciar tiempo</button>
-                <button id="btn-iniciar-serie">Iniciar serie (10)</button>
-                <button id="btn-detener">Detener</button>
-                <button id="btn-revisar">Mostrar orden</button>
-            </div>
+            <!-- Controles removidos: ahora el temporizador inicia al arrastrar -->
 
             <div class="marcador">
                 <div>
@@ -65,7 +59,6 @@
         <section class="zona-juego">
             <div class="zona-header">
                 <h2>Tarjetas para repartir</h2>
-                <button id="btn-mezclar">Mezclar</button>
             </div>
             <div id="tarjetas" class="tarjetas" aria-label="Tarjetas numericas"></div>
 
@@ -74,6 +67,7 @@
                 <div id="orden-correcto" class="orden-correcto"></div>
             </div>
 
+            <div id="resultados" class="resultados oculto" aria-live="polite"></div>
             <div id="confetti" class="confetti"></div>
         </section>
     </main>

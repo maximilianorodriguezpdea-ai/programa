@@ -217,6 +217,24 @@ button:disabled {
     gap: 14px;
 }
 
+.boton-confirmar {
+    width: 100%;
+    margin-top: 18px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    background: #2c8a57;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+}
+
+.boton-confirmar:hover {
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+}
+
 .tarjeta {
     min-height: 150px;
     padding: 14px;
@@ -278,6 +296,43 @@ button:disabled {
     color: #473700;
     font-size: 18px;
     font-weight: 800;
+}
+
+.resultados {
+    margin-top: 22px;
+    padding: 18px;
+    border-top: 2px dashed #bdd3d8;
+    background: #f4fcff;
+    border-radius: 8px;
+}
+
+.resultados h2 {
+    margin: 0;
+    color: #11636e;
+    font-size: 22px;
+}
+
+.resultados table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
+}
+
+.resultados th,
+.resultados td {
+    padding: 12px 14px;
+    border: 1px solid #c9dfe4;
+    text-align: left;
+}
+
+.resultados th {
+    background: #e2f3f6;
+    color: #14545f;
+}
+
+.resultados td {
+    background: #ffffff;
+    color: #153443;
 }
 
 @media (max-width: 900px) {

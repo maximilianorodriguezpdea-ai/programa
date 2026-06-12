@@ -1,5 +1,14 @@
-// Función para convertir números a palabras en español
-function numeroALetras(num) {
+function hablar(texto) {
+    if (!window.speechSynthesis) return;
+    const voz = new SpeechSynthesisUtterance(texto);
+    voz.lang = 'es-ES';
+    speechSynthesis.cancel();
+    speechSynthesis.speak(voz);
+}
+
+// Bienvenida explicativa
+hablar('Aprende a leer, escribir y representar números del 0 al 10 mil.');
+
     const unidades = ['', 'uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve'];
     const dieces = ['diez', 'once', 'doce', 'trece', 'catorce', 'quince', 'dieciséis', 'diecisiete', 'dieciocho', 'diecinueve'];
     const decenas = ['', '', 'veinte', 'treinta', 'cuarenta', 'cincuenta', 'sesenta', 'setenta', 'ochenta', 'noventa'];

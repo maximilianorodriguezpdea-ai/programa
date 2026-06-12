@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
+    function hablar(texto) {
+        if (!window.speechSynthesis) return;
+        const voz = new SpeechSynthesisUtterance(texto);
+        voz.lang = 'es-ES';
+        speechSynthesis.cancel();
+        speechSynthesis.speak(voz);
+    }
+    
+    hablar('Escribe el nombre del número que aparece. Por ejemplo, cinco para el número 5.');
+    
     const numeroDisplay = document.getElementById('numero-aleatorio');
     const inputNombre = document.getElementById('input-nombre');
     const btnVerificar = document.getElementById('btn-verificar');
